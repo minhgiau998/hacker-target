@@ -3,7 +3,7 @@ Python based script for Information Gathering. The API Server is built by [Hacke
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install GetInfo.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install HackerTarget.
 
 ```bash
 pip install -r requirements.txt
