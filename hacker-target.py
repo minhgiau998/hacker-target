@@ -2,7 +2,6 @@ import os
 import requests
 import platform
 from halo import Halo
-from IPy import IP
 import validators
 from art import *
 from termcolor import colored
@@ -127,59 +126,59 @@ def main():
         choice = input("Enter your choice [1-9]: ")
         if choice == "1":
             host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            if validators.domain(host) or validators.ipv4(host):
                 whois(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "2":
             host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            if validators.domain(host) or validators.ipv4(host):
                 traceroute(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "3":
-            host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            host = input("Enter Domain for lookup: ")
+            if validators.domain(host):
                 dnslookup(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "4":
             host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            if validators.domain(host) or validators.ipv4(host):
                 reversedns(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "5": 
-            host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            host = input("Enter IP for lookup: ")
+            if validators.ipv4(host):
                 geoip(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "6":
             host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            if validators.domain(host) or validators.ipv4(host):
                 portscan(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "7":
-            host = input("Enter web address: ")
-            if validators.url(host):
+            host = input("Enter Domain for lookup: ")
+            if validators.domain(host):
                 pagelinks(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "8":
-            host = input("Enter IP or Domain for lookup: ")
-            if isIP(host):
+            host = input("Enter Domain for lookup: ")
+            if validators.domain(host):
                 httpheader(host)
             else:
-                print("Something wrong with input!")
+                print(colored("Something wrong with input!", "red"))
             input("Press [Enter] to continue...")
         elif choice == "9":
             print("Thank you for using!")
