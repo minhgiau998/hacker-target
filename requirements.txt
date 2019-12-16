@@ -1,6 +1,5 @@
 requests
 halo
-ipy
 validators
 art
 termcolor
